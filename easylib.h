@@ -15,7 +15,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
+# include <curses.h>
 
+void	ft_welcome(void);
+float	ft_menu(void);
+void	ft_goodbye(void);
 typedef struct s_node
 {
 	void			*content;

@@ -12,6 +12,24 @@
 
 #include "easylib.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
+	float	menu;
+
+    ft_welcome();
+	main_menu:
+	menu = ft_menu();
+	if (menu == 1)
+	{
+		printf("wait to the program");
+	}
+	else if (menu == 2)
+		ft_goodbye();
+	else
+	{
+		printf("Please enter 1 or 2 only!!!\n");
+		system("sleep 2.0");
+		system("clear || cls");
+		goto main_menu;
+	}
 }
