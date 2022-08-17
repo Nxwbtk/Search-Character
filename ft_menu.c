@@ -17,14 +17,16 @@ float	ft_menu(void)
 	printf("========================================\n");
 	printf("||                                    ||\n");
 	printf("||             Menu                   ||\n");
-	printf("||   1. Search character program      ||\n");
-	printf("||       2. Exit the program          ||\n");
+	printf("||          1. Traverse               ||\n");
+	printf("||        2. Show last node           ||\n");
+	printf("||         3. Add new node            ||\n");
+	printf("||       0. Exit the program          ||\n");
 	printf("||                                    ||\n");
 	printf("========================================\n\n");
 	float	menu;
 	printf("Enter your choice : ");
 	scanf("%f", &menu);
-	if (menu == 1 || menu == 2)
+	if (menu > 0)
 		return (menu);
 	else
 		return (0);

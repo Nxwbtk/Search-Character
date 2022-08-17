@@ -12,7 +12,8 @@
 
 NAME = sc_program
 
-SRC = main.c ft_welcome.c ft_menu.c ft_goodbye.c
+SRC = main.c ft_welcome.c ft_menu.c ft_goodbye.c ft_traverse.c ft_lstlast.c \
+ft_lstnew.c ft_lstadd_back.c
 
 CC = gcc
 HEADER = libft.h
