@@ -1,6 +1,6 @@
 #include "easylib.h"
 
-t_node	*ft_lstnew(void *content)
+t_node	*ft_lstnew(char content)
 {
 	t_node	*ptr;
 

@@ -22,12 +22,12 @@ float	ft_menu(void);
 void	ft_goodbye(void);
 typedef struct s_node
 {
-	void			*content;
+	char			content;
 	struct s_node	*next;
 }				t_node;
 void    ft_traverse(t_node *lst);
 t_node	*ft_lstlast(t_node *lst);
-t_node	*ft_lstnew(void *content);
-t_node	*ft_lstadd_back(t_node *lst, t_node *new);
+t_node	*ft_lstnew(char content);
+void	*ft_lstadd_back(t_node *lst, t_node *new);
 
 #endif
