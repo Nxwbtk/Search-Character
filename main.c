@@ -18,7 +18,6 @@ int main(void)
 	char	any;
 	t_node	*n_lst;
 
-	n_lst = malloc(sizeof(t_node) + 1);
 	n_lst = NULL;
 
     ft_welcome();
@@ -35,25 +34,28 @@ int main(void)
 	{
 		t_node	*last;
 
-		last = malloc(sizeof(t_node) + 1);
-		last = ft_lstlast(n_lst);
-		printf("Last node is %d\n", last);
+		if (n_lst)
+		{
+			last = ft_lstlast(n_lst);
+			printf("Last node is %c\n", last->content);
+		}
+		else
+			printf("Node is Empty\n");
+		goto main_menu;
 	}
 	else if (menu == 3)
 	{
-		int	new;
+		char	new[10];
 		t_node	*newlst;
-	
-		newlst = malloc(sizeof(t_node));
-		printf("Please enter number : ");
-		scanf("%d", &new);
-		
+		printf("Please enter charecter: ");
+		scanf("%s", new);
+
 		if (!n_lst)
-			n_lst = ft_lstnew(new);
+			n_lst = ft_lstnew(*new);
 		else
 		{
-			newlst = ft_lstnew(new);
-			n_lst = ft_lstadd_back(n_lst, newlst);
+			newlst = ft_lstnew(*new);
+			ft_lstadd_back(n_lst, newlst);
 			printf("Add done\n");
 		}
 		system("sleep 0.5 && (clear || cls)");

@@ -20,7 +20,7 @@ void    ft_traverse(t_node *lst)
     {
         while (lst)
         {
-            printf("%d-->", lst->content);
+            printf("%c --> ", lst->content);
             lst = lst->next;
         }
         printf("NULL\n");
