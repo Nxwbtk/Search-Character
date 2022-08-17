@@ -28,6 +28,6 @@ typedef struct s_node
 void    ft_traverse(t_node *lst);
 t_node	*ft_lstlast(t_node *lst);
 t_node	*ft_lstnew(char content);
-void	*ft_lstadd_back(t_node *lst, t_node *new);
+void	ft_lstadd_back(t_node *lst, t_node *new);
 
 #endif

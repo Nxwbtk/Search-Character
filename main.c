@@ -19,7 +19,6 @@ int main(void)
 	t_node	*n_lst;
 
 	n_lst = NULL;
-
     ft_welcome();
 	main_menu:
 	menu = ft_menu();
@@ -40,16 +39,16 @@ int main(void)
 			printf("Last node is %c\n", last->content);
 		}
 		else
-			printf("Node is Empty\n");
+			printf("List is empty!!!\n");
 		goto main_menu;
 	}
 	else if (menu == 3)
 	{
 		char	new[10];
 		t_node	*newlst;
-		printf("Please enter charecter: ");
-		scanf("%s", new);
 
+		printf("Please enter character: ");
+		scanf("%s", new);
 		if (!n_lst)
 			n_lst = ft_lstnew(*new);
 		else
