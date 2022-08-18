@@ -25,9 +25,11 @@ typedef struct s_node
 	char			content;
 	struct s_node	*next;
 }				t_node;
-void    ft_traverse(t_node *lst);
 t_node	*ft_lstlast(t_node *lst);
 t_node	*ft_lstnew(char content);
+void    ft_traverse(t_node *lst);
 void	ft_lstadd_back(t_node *lst, t_node *new);
+void	ft_lstdelete(t_node **lst, int c, int len);
+int		ft_search(t_node *lst, int c);
 
 #endif

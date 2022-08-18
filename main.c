@@ -17,6 +17,7 @@ int main(void)
 	float	menu;
 	char	any;
 	t_node	*n_lst;
+	int		i;
 
 	n_lst = NULL;
     ft_welcome();
@@ -44,21 +45,72 @@ int main(void)
 	}
 	else if (menu == 3)
 	{
-		char	new[10];
-		t_node	*newlst;
+		char		new[10000000];
+		t_node		*newlst;
 
 		printf("Please enter character: ");
 		scanf("%s", new);
-		if (!n_lst)
-			n_lst = ft_lstnew(*new);
-		else
+		i = 0;
+		while (new[i])
 		{
-			newlst = ft_lstnew(*new);
-			ft_lstadd_back(n_lst, newlst);
-			printf("Add done\n");
+			if (!n_lst)
+				n_lst = ft_lstnew(new[i]);
+			else
+			{
+				newlst = ft_lstnew(new[i]);
+				ft_lstadd_back(n_lst, newlst);
+				// printf("Add done\n");
+			}
+			i++;
 		}
 		system("sleep 0.5 && (clear || cls)");
 		goto main_menu;
+	}
+	else if (menu == 4)
+	{
+		char	find[2];
+		int		i_find;
+
+		printf("Enter character to find: ");
+		scanf("%s", find);
+		system("cls || clear");
+		i_find = ft_search(n_lst, find[0]);
+		if (i_find)
+		{
+			ft_traverse(n_lst);
+			printf("Found at index %d !!!\n", i_find);
+		}
+		else
+			printf("Character not found in string.\n");
+		printf("Press any key to continue...");
+		scanf(" %c", &any);
+		system("clear || cls");
+		goto main_menu;
+	}
+	else if (menu == 5)
+	{
+		int	i_find;
+
+		if (!n_lst)
+		{
+			printf("List is empty. Please try again.\n");
+			system("sleep 1.3 && (clear || cls)");
+			goto main_menu;
+		}
+		ft_traverse(n_lst);
+		char	find[2];
+
+		printf("Enter character to find: ");
+		scanf("%s", find);
+		i_find = ft_search(n_lst, find[0]);
+		if (!i_find)
+		{
+			printf("Character isn't in the string. Please try again.");
+			system("sleep 1.3 && (clear || cls)");
+			goto main_menu;
+		}
+		ft_lstdelete(&n_lst, find[0], i_find);
+		ft_traverse(n_lst);
 	}
 	else if (menu == 0)
 		ft_goodbye();

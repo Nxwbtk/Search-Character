@@ -20,6 +20,8 @@ float	ft_menu(void)
 	printf("||          1. Traverse               ||\n");
 	printf("||        2. Show last node           ||\n");
 	printf("||         3. Add new node            ||\n");
+	printf("||       4. Search Character          ||\n");
+	printf("||       5. Delete Character          ||\n");
 	printf("||       0. Exit the program          ||\n");
 	printf("||                                    ||\n");
 	printf("========================================\n\n");
