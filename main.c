@@ -16,27 +16,27 @@ int main(void)
 {
 	float	menu;
 	char	any;
-	t_node	*n_lst;
+	t_node	*lst;
 	int		i;
 
-	n_lst = NULL;
+	lst = NULL;
     ft_welcome();
 	main_menu:
 	menu = ft_menu();
 	if (menu == 1)
 	{
-		ft_traverse(n_lst);
-		printf("Press anykey to continue...\n");
-		scanf("%c", &any);
+		ft_traverse(lst);
+		printf("Press anykey to continue...");
+		scanf(" %c", &any);
 		goto main_menu;
 	}
 	else if (menu == 2)
 	{
 		t_node	*last;
 
-		if (n_lst)
+		if (lst)
 		{
-			last = ft_lstlast(n_lst);
+			last = ft_lstlast(lst);
 			printf("Last node is %c\n", last->content);
 		}
 		else
@@ -53,12 +53,12 @@ int main(void)
 		i = 0;
 		while (new[i])
 		{
-			if (!n_lst)
-				n_lst = ft_lstnew(new[i]);
+			if (!lst)
+				lst = ft_lstnew(new[i]);
 			else
 			{
 				newlst = ft_lstnew(new[i]);
-				ft_lstadd_back(n_lst, newlst);
+				ft_lstadd_back(lst, newlst);
 				// printf("Add done\n");
 			}
 			i++;
@@ -74,10 +74,10 @@ int main(void)
 		printf("Enter character to find: ");
 		scanf("%s", find);
 		system("cls || clear");
-		i_find = ft_search(n_lst, find[0]);
+		i_find = ft_search(lst, find[0]);
 		if (i_find)
 		{
-			ft_traverse(n_lst);
+			ft_traverse(lst);
 			printf("Found at index %d !!!\n", i_find);
 		}
 		else
@@ -91,26 +91,30 @@ int main(void)
 	{
 		int	i_find;
 
-		if (!n_lst)
+		if (!lst)
 		{
 			printf("List is empty. Please try again.\n");
 			system("sleep 1.3 && (clear || cls)");
 			goto main_menu;
 		}
-		ft_traverse(n_lst);
+		ft_traverse(lst);
 		char	find[2];
 
 		printf("Enter character to find: ");
 		scanf("%s", find);
-		i_find = ft_search(n_lst, find[0]);
+		i_find = ft_search(lst, find[0]);
 		if (!i_find)
 		{
 			printf("Character isn't in the string. Please try again.");
 			system("sleep 1.3 && (clear || cls)");
 			goto main_menu;
 		}
-		ft_lstdelete(&n_lst, find[0], i_find);
-		ft_traverse(n_lst);
+		ft_lstdelete(&lst, find[0], i_find);
+		ft_traverse(lst);
+		printf("Press Any key to continue...");
+		scanf(" %c", &any);
+		system("cls || clear");
+		goto main_menu;
 	}
 	else if (menu == 0)
 		ft_goodbye();

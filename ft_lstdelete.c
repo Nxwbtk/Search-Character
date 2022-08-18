@@ -1,39 +1,43 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstdelete.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: bsirikam <bsirikam@student.42bangkok.com>  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 16:00:17 by bsirikam          #+#    #+#             */
-/*   Updated: 2022/08/18 17:18:48 by bsirikam         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* ******************************************************************************* */
+/*                                                                                 */
+/*                                                     :::     ::: :::     :::     */
+/*   ft_lstdelete.c                                   :+:    :+:  :+:     +:+      */
+/*                                                   +:+   +:+   +:+     +:+       */
+/*   By: nxwbtk <bunthakan.s@ku.th>                 +#+  +:+    +#+     +#+        */
+/*                                                 +#+ #+#     +#+     +#+         */
+/*   Created: 2022/08/18 17:38:13 by nxwbtk       #+#   #+#   +#+     +#+          */
+/*   Updated: 2022/08/18 17:38:15 by nxwbtk      ###     ###   ########.th         */
+/*                                                                                 */
+/* ******************************************************************************* */
 
 #include "easylib.h"
 
 void	ft_lstdelete(t_node **lst, int c, int len)
 {
 	t_node	*tmp;
+	t_node	*del;
 	int		i;
 
 	i = 0;
 	tmp = *lst;
 	while (tmp && tmp->content != (char)c)
 	{	
-		lst = (*lst)->next;
+		tmp = tmp->next;
 		i++;
 	}
-	if (tmp->content == (char)c)
+	if (tmp && tmp->content == (char)c)
 	{
-		if (tmp == *lst)
+		del = tmp;
+		if (del == *lst) // edit head's address
+			*lst = del->next;
+		else //edit middle node
 		{
-			*lst = (*lst)->next;
+			tmp = *lst;
+			while (tmp->next != del)
+				tmp = tmp->next;
+			if (tmp->next == del)
+				tmp->next = del->next;
 		}
-		else
-		{
-			lst = tmp->next;
-			free(tmp);
-		}
+		free(del);
 	}
 }
