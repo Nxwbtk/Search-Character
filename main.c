@@ -100,7 +100,7 @@ int main(void)
 		ft_traverse(lst);
 		char	find[2];
 
-		printf("Enter character to find: ");
+		printf("Enter character to delete: ");
 		scanf("%s", find);
 		i_find = ft_search(lst, find[0]);
 		if (!i_find)
