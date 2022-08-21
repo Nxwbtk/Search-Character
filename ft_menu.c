@@ -22,14 +22,11 @@ float	ft_menu(void)
 	printf("||         3. Add new node            ||\n");
 	printf("||       4. Search Character          ||\n");
 	printf("||       5. Delete Character          ||\n");
-	printf("||       0. Exit the program          ||\n");
+	printf("||       6. Exit the program          ||\n");
 	printf("||                                    ||\n");
 	printf("========================================\n\n");
-	float	menu;
+	char	menu[10000000];
 	printf("Enter your choice : ");
-	scanf("%f", &menu);
-	if (menu > 0)
-		return (menu);
-	else
-		return (0);
+	scanf("%s", menu);
+	return (atof(menu));
 }

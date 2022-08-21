@@ -45,7 +45,7 @@ int main(void)
 	}
 	else if (menu == 3)
 	{
-		char		new[10000000];
+		char		new[BUFF_SIZE];
 		t_node		*newlst;
 
 		printf("Please enter character: ");
@@ -105,22 +105,22 @@ int main(void)
 		i_find = ft_search(lst, find[0]);
 		if (!i_find)
 		{
-			printf("Character isn't in the string. Please try again.");
+			printf("Character isn't in the string. Please try again.\n");
 			system("sleep 1.3 && (clear || cls)");
 			goto main_menu;
 		}
-		ft_lstdelete(&lst, find[0], i_find);
+		ft_lstdelete(&lst, find[0]);
 		ft_traverse(lst);
 		printf("Press Any key to continue...");
 		scanf(" %c", &any);
 		system("cls || clear");
 		goto main_menu;
 	}
-	else if (menu == 0)
+	else if (menu == 6)
 		ft_goodbye();
 	else
 	{
-		printf("Please enter 1 or 2 only!!!\n");
+		printf("Please enter Only 1-6!!!\n");
 		system("sleep 2.0");
 		system("clear || cls");
 		goto main_menu;

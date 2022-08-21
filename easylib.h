@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# define BUFF_SIZE 10000000
 
 void	ft_welcome(void);
 float	ft_menu(void);
@@ -29,7 +30,7 @@ t_node	*ft_lstlast(t_node *lst);
 t_node	*ft_lstnew(char content);
 void    ft_traverse(t_node *lst);
 void	ft_lstadd_back(t_node *lst, t_node *new);
-void	ft_lstdelete(t_node **lst, int c, int len);
+void	ft_lstdelete(t_node **lst, int c);
 int		ft_search(t_node *lst, int c);
 
 #endif

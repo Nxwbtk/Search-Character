@@ -12,16 +12,19 @@
 
 #include "easylib.h"
 
-void    ft_traverse(t_node *lst)
+void    ft_traverse(t_node *head)
 {
-    if (!(lst))
-        printf("List is empty\n");
-    else
+    if (!(head))
     {
-        while (lst)
+        printf("List is empty\n");
+        return ;
+    }
+    if (head)
+    {
+        while (head)
         {
-            printf("%c --> ", lst->content);
-            lst = lst->next;
+            printf("%c --> ", head->content);
+            head = head->next;
         }
         printf("NULL\n");
     }

@@ -12,19 +12,14 @@
 
 #include "easylib.h"
 
-void	ft_lstdelete(t_node **lst, int c, int len)
+void	ft_lstdelete(t_node **lst, int c)
 {
 	t_node	*tmp;
 	t_node	*del;
-	int		i;
 
-	i = 0;
 	tmp = *lst;
 	while (tmp && tmp->content != (char)c)
-	{	
 		tmp = tmp->next;
-		i++;
-	}
 	if (tmp && tmp->content == (char)c)
 	{
 		del = tmp;

@@ -16,7 +16,6 @@ SRC = main.c ft_welcome.c ft_menu.c ft_goodbye.c ft_traverse.c ft_lstlast.c \
 ft_lstnew.c ft_lstadd_back.c ft_search.c ft_lstdelete.c
 
 CC = gcc
-HEADER = libft.h
 
 all: $(NAME)
 
