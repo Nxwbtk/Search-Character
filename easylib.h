@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
-# define BUFF_SIZE 100000
+# define BUFF_SIZE 42000
 
 void	ft_welcome(void);
 float	ft_menu(void);
