@@ -14,18 +14,22 @@
 
 void    ft_traverse(t_node *head)
 {
+    t_node  *tmp;
+
     if (!(head))
     {
         printf("List is empty\n");
         return ;
     }
-    if (head)
+    tmp = head;
+    if (tmp)
     {
-        while (head)
+        while (tmp)
         {
-            printf("%c --> ", head->content);
-            head = head->next;
+            printf("%c --> ", tmp->content);
+            tmp = tmp->next;
         }
-        printf("NULL\n");
+        printf("HEAD\n");
+        tmp = head;
     }
 }

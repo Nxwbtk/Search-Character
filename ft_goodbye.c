@@ -23,4 +23,15 @@ void	ft_goodbye(void)
 	printf("||                                    ||\n");
 	printf("========================================\n\n\n");
 	system("sleep 2.5 && (clear || cls)");
+	printf("==============================================\n");
+	printf("||                                          ||\n");
+	printf("||              Created By                  ||\n");
+	printf("||    Chayakorn rutcharoen 6430200108       ||\n");
+	printf("||     Boonyarat Silajan  6430200400        ||\n");
+	printf("||  Napasorn Rueangthongmueang 6430200361   ||\n");
+	printf("||   Veerakit Kiathiranchoti  6330200785    ||\n");
+	printf("||   Bunthakan Sirikamonthip  6430200418    ||\n");
+	printf("||                                          ||\n");
+	printf("==============================================\n");
+	system("sleep 5.0 && (clear || cls)");
 }
