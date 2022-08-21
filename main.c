@@ -59,10 +59,10 @@ int main(void)
 			{
 				newlst = ft_lstnew(new[i]);
 				ft_lstadd_back(lst, newlst);
-				// printf("Add done\n");
 			}
 			i++;
 		}
+		printf("Add done\n");
 		system("sleep 0.5 && (clear || cls)");
 		goto main_menu;
 	}

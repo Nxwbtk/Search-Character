@@ -33,5 +33,5 @@ void	ft_goodbye(void)
 	printf("||   Bunthakan Sirikamonthip  6430200418    ||\n");
 	printf("||                                          ||\n");
 	printf("==============================================\n");
-	system("sleep 5.0 && (clear || cls)");
+	system("sleep 3.0 && (clear || cls)");
 }

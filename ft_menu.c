@@ -25,8 +25,8 @@ float	ft_menu(void)
 	printf("||       6. Exit the program          ||\n");
 	printf("||                                    ||\n");
 	printf("========================================\n\n");
-	char	menu[10000000];
+	char	menu[100];
 	printf("Enter your choice : ");
-	scanf("%s", menu);
+	scanf("%100s", menu);
 	return (atof(menu));
 }
